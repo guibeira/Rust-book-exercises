@@ -8,6 +8,13 @@ fn main() {
     let word = first_word(&my_string_literal[..]);
 
     let word = first_word(my_string_literal);
+
+    let a = [1, 2, 3, 4, 5];
+    println!("{:?}", a);
+
+    let slice = &a[1..3];
+
+    println!("{:?}", slice);
 }
 
 fn first_word(s: &str) -> &str {
