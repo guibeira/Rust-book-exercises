@@ -1,13 +1,9 @@
 fn main(){
-    enum SpreadsheetCell {
-        Int(i32),
-        Float(f64),
-        Text(String),
-    }
-    
-    let row = vec![
-        SpreadsheetCell::Int(3),
-        SpreadsheetCell::Text(String::from("Blue")),
-        SpreadsheetCell::Float(10.12),
-    ];
+    let data = "Initial contents";
+
+    let s  = data.to_string();
+
+    let s = "Initial contents".to_string();
+
+    let s = String::from("Initial contests");
 }
