@@ -1,15 +1,10 @@
-fn main(){
-    let data = "Initial contents";
+fn main() {
+    use std::collections::HashMap;
 
-    let s  = data.to_string();
+    let mut scores = HashMap::new();
 
-    let s = "Initial contents".to_string();
+    scores.insert(String::from("Blue"), 10);
+    scores.insert(String::from("Yellow"), 50);
 
-    let s = String::from("Initial contests");
-
-    let mut s1 = String::from("foo");
-
-    s1.push_str("bar");
-
-    println!("s1 is {}", s1);
 }
+
