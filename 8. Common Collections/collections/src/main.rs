@@ -7,6 +7,10 @@ fn main() {
     let mut scores: HashMap<_, _> = teams.into_iter().zip(initial_scores.into_iter()).collect();
 
     let score_blue_team = scores.get(&"Blue".to_string());
+    for (key, value) in &scores {
+        println!("{}: {}", key, value);
+
+    }
 
 }
 
