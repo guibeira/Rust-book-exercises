@@ -1,38 +1,22 @@
-fn largest_i32(list: &[i32]) -> i32 {
-    let mut largest = list[0];
-
-    for &item in list {
-        if item > largest {
-            largest = item;
-        }
-    }
-
-    largest
+struct Point<T, U> {
+    x: T,
+    y: U,
 }
 
-fn largest_char(list: &[char]) -> char {
-    let mut largest = list[0];
-
-    for &item in list {
-        if item > largest {
-            largest = item;
+impl<T, U> Point<T, U> {
+    fn mixup<V, W>(self, other: Point<V, W>) -> Point<T, W> {
+        Point {
+            x: self.x,
+            y: other.y,
         }
     }
-
-    largest
 }
 
 fn main() {
-    let number_list = vec![34, 50, 25, 100, 65];
+    let p1 = Point { x: 5, y: 10.4 };
+    let p2 = Point { x: "Hello", y: 'c' };
 
-    let result = largest_i32(&number_list);
-    println!("The largest number is {}", result);
-    assert_eq!(result, 100);
+    let p3 = p1.mixup(p2);
 
-    let char_list = vec!['y', 'm', 'a', 'q', 'z'];
-
-    let result = largest_char(&char_list);
-    println!("The largest char is {}", result);
-    assert_eq!(result, 'z');
+    println!("p3.x = {}, p3.y = {}", p3.x, p3.y);
 }
-
