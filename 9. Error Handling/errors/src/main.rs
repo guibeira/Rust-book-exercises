@@ -1,15 +1,21 @@
 #![allow(unused_variables)]
 fn main() {
-use std::fs::File;
-use std::io;
-use std::io::Read;
+pub struct Guess {
+    value: i32,
+}
 
-fn read_username_from_file() -> Result<String, io::Error> {
-    let mut s = String::new();
+impl Guess {
+    pub fn new(value: i32) -> Guess {
+        if value < 1 || value > 100 {
+            panic!("Guess value must be between 1 and 100, got {}.", value);
+        }
 
-    File::open("hello.txt")?.read_to_string(&mut s)?;
+        Guess { value }
+    }
 
-    Ok(s)
+    pub fn value(&self) -> i32 {
+        self.value
+    }
 }
 }
 
