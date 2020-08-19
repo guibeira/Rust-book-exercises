@@ -1,34 +1,16 @@
-#![allow(unused_variables)]
 fn main() {
-    pub trait Summary {
-	fn summarize_author(&self) -> String;
+    let string1 = String::from("abcd");
+    let string2 = "xyz";
 
-	fn summarize(&self) -> String {
-	    format!("(Read more from {}...)", self.summarize_author())
-	}
+    let result = longest(string1.as_str(), string2);
+    println!("The longest string is {}", result);
+}
+
+fn longest<'a>(x: &'a str, y: &'a str) -> &'a str {
+    if x.len() > y.len() {
+        x
+    } else {
+        y
     }
-
-    pub struct Tweet {
-	pub username: String,
-	pub content: String,
-	pub reply: bool,
-	pub retweet: bool,
-    }
-
-    impl Summary for Tweet {
-	fn summarize_author(&self) -> String {
-	    format!("@{}", self.username)
-	}
-    }
-    let tweet = Tweet {
-        username: String::from("horse_ebooks"),
-        content: String::from(
-            "of course, as you probably already know, people",
-        ),
-        reply: false,
-        retweet: false,
-    };
-
-    println!("1 new tweet: {}", tweet.summarize());
 }
 
