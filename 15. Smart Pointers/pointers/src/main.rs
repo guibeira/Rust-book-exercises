@@ -1,11 +1,19 @@
-enum List {
-    Cons(i32, Box<List>),
-    Nil,
+struct CustomSmartPointer {
+    data: String,
 }
 
-use crate::List::{Cons, Nil};
+impl Drop for CustomSmartPointer {
+    fn drop(&mut self) {
+        println!("Dropping CustomSmartPointer with data `{}`!", self.data);
+    }
+}
 
 fn main() {
-    let list = Cons(1, Box::new(Cons(2, Box::new(Cons(3, Box::new(Nil))))));
+    let c = CustomSmartPointer {
+        data: String::from("some data"),
+    };
+    println!("CustomSmartPointer created.");
+    drop(c);
+    println!("CustomSmartPointer dropped before the end of main.");
 }
 
