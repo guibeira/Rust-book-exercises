@@ -1,12 +1,9 @@
 fn main() {
-    let x = Some(5);
-    let y = 10;
+    let x = 1;
 
     match x {
-        Some(50) => println!("Got 50"),
-        Some(y) => println!("Matched, y = {:?}", y),
-        _ => println!("Default case, x = {:?}", x),
+        1 | 2 => println!("one or two"),
+        3 => println!("three"),
+        _ => println!("anything"),
     }
-
-    println!("at the end: x = {:?}, y = {:?}", x, y);
 }
