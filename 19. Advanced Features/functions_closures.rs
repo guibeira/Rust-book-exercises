@@ -1,8 +1,7 @@
-fn main() {
-    enum Status {
-        Value(u32),
-        Stop,
-    }
 
-    let list_of_statuses: Vec<Status> = (0u32..20).map(Status::Value).collect();
+#![allow(unused)]
+fn main() {
+fn returns_closure() -> Box<dyn Fn(i32) -> i32> {
+    Box::new(|x| x + 1)
+}
 }
